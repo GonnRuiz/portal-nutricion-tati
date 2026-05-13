@@ -64,6 +64,7 @@ CREATE TABLE IF NOT EXISTS profiles (
   updated_at         TIMESTAMPTZ NOT NULL DEFAULT now()
 );
 
+DROP TRIGGER IF EXISTS trg_profiles_updated_at ON profiles;
 CREATE TRIGGER trg_profiles_updated_at
   BEFORE UPDATE ON profiles
   FOR EACH ROW EXECUTE FUNCTION trigger_set_updated_at();
@@ -95,6 +96,7 @@ CREATE INDEX idx_blog_posts_slug ON blog_posts(slug);
 CREATE INDEX idx_blog_posts_status ON blog_posts(status);
 CREATE INDEX idx_blog_posts_category ON blog_posts(category);
 
+DROP TRIGGER IF EXISTS trg_blog_posts_updated_at ON blog_posts;
 CREATE TRIGGER trg_blog_posts_updated_at
   BEFORE UPDATE ON blog_posts
   FOR EACH ROW EXECUTE FUNCTION trigger_set_updated_at();
@@ -122,6 +124,7 @@ CREATE INDEX idx_appointments_patient ON appointments(patient_id);
 CREATE INDEX idx_appointments_date ON appointments(appointment_date);
 CREATE INDEX idx_appointments_status ON appointments(status);
 
+DROP TRIGGER IF EXISTS trg_appointments_updated_at ON appointments;
 CREATE TRIGGER trg_appointments_updated_at
   BEFORE UPDATE ON appointments
   FOR EACH ROW EXECUTE FUNCTION trigger_set_updated_at();
@@ -149,6 +152,7 @@ CREATE TABLE IF NOT EXISTS nutrition_plans (
 
 CREATE INDEX idx_nutrition_plans_patient ON nutrition_plans(patient_id);
 
+DROP TRIGGER IF EXISTS trg_nutrition_plans_updated_at ON nutrition_plans;
 CREATE TRIGGER trg_nutrition_plans_updated_at
   BEFORE UPDATE ON nutrition_plans
   FOR EACH ROW EXECUTE FUNCTION trigger_set_updated_at();
@@ -285,7 +289,8 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql SECURITY DEFINER;
 
-CREATE OR REPLACE TRIGGER trg_after_auth_user_created
+DROP TRIGGER IF EXISTS trg_after_auth_user_created ON auth.users;
+CREATE TRIGGER trg_after_auth_user_created
   AFTER INSERT ON auth.users
   FOR EACH ROW EXECUTE FUNCTION handle_new_user();
 
