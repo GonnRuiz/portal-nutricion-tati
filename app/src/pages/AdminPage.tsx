@@ -5,7 +5,7 @@ import { blogPosts } from '@/data/mockData';
 import { useToast } from '@/hooks/use-toast';
 import { img } from '@/lib/utils'
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from 'recharts';
-import type { AdminTab, ArticleForm, Patient, Appointment, WeightRecord, Study, PatientPlan } from '@/types/admin';
+import type { AdminTab, ArticleForm, Patient } from '@/types/admin';
 import { CATEGORIES, mockPatients, mockWeightHistory, mockStudies, mockPlans, mockAppointments } from '@/data/admin/mockData';
 import { calcIMC, imcCategory, generateSlug } from '@/lib/adminHelpers';
 
