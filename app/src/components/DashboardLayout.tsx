@@ -84,8 +84,14 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
           ))}
         </nav>
 
-        {/* Logout */}
-        <div className="p-4 border-t border-[rgba(248,201,216,0.15)]">
+        {/* Back to site + Logout */}
+        <div className="p-4 border-t border-[rgba(248,201,216,0.15)] space-y-1">
+          <Link
+            to="/"
+            className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-[#636E72] hover:bg-[rgba(248,201,216,0.1)] hover:text-nutri-primary transition-all duration-200 w-full"
+          >
+            Volver al sitio
+          </Link>
           <button
             onClick={handleLogout}
             className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-[#636E72] hover:bg-[rgba(248,201,216,0.1)] hover:text-nutri-primary transition-all duration-200 w-full"

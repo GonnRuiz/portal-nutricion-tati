@@ -103,7 +103,7 @@ export function Navbar() {
               </Link>
               <button
                 onClick={logout}
-                className="flex items-center gap-2 px-4 py-2.5 text-[14px] font-semibold text-[#636E72] hover:text-nutri-primary hover:bg-[rgba(248,201,216,0.15)] rounded-xl transition-all duration-200"
+                className="flex items-center gap-2 px-4 py-2.5 text-[14px] font-semibold text-[#636E72] hover:text-nutri-primary hover:bg-[rgba(248,201,216,0.1)] rounded-xl transition-all duration-200"
               >
                 <LogOut className="w-4 h-4" />
                 Cerrar Sesión
@@ -116,7 +116,20 @@ export function Navbar() {
                 className="flex items-center gap-2 px-5 py-2.5 text-[14px] font-semibold text-nutri-primary border-2 border-nutri-primary rounded-xl hover:bg-nutri-primary hover:text-white transition-all duration-250"
               >
                 <LogIn className="w-4 h-4" />
-                Portal Pacientes
+                Iniciar Sesión
+              </Link>
+              <Link
+                to="/registro"
+                className="px-5 py-2.5 text-[14px] font-semibold text-[#636E72] hover:text-nutri-primary transition-colors duration-200"
+              >
+                Crear Cuenta
+              </Link>
+              <Link
+                to="/login"
+                className="flex items-center gap-2 px-6 py-2.5 text-[14px] font-semibold text-white gradient-primary-btn rounded-xl shadow-btn hover:shadow-btn-hover hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
+              >
+                <Calendar className="w-4 h-4" />
+                Reservar
               </Link>
               <Link
                 to="/login"
@@ -185,6 +198,14 @@ export function Navbar() {
                     <Link
                       to="/login"
                       onClick={() => setMobileOpen(false)}
+                      className="flex items-center justify-center gap-2 px-4 py-3 text-[14px] font-semibold text-white gradient-primary-btn rounded-xl transition-all duration-200"
+                    >
+                      <Calendar className="w-4 h-4" />
+                      Reservar Consulta
+                    </Link>
+                    <Link
+                      to="/login"
+                      onClick={() => setMobileOpen(false)}
                       className="flex items-center justify-center gap-2 px-4 py-3 text-[14px] font-semibold text-nutri-primary border-2 border-nutri-primary rounded-xl hover:bg-nutri-primary hover:text-white transition-all duration-250"
                     >
                       <LogIn className="w-4 h-4" />
@@ -193,7 +214,7 @@ export function Navbar() {
                     <Link
                       to="/registro"
                       onClick={() => setMobileOpen(false)}
-                      className="flex items-center justify-center gap-2 px-4 py-3 text-[14px] font-semibold text-white gradient-primary-btn rounded-xl transition-all duration-200"
+                      className="flex items-center justify-center gap-2 px-4 py-3 text-[14px] font-semibold text-[#636E72] border border-[rgba(248,201,216,0.3)] rounded-xl hover:bg-[rgba(248,201,216,0.1)] transition-all duration-200"
                     >
                       <User className="w-4 h-4" />
                       Crear Cuenta
