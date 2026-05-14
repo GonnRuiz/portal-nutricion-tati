@@ -74,7 +74,7 @@ export function DatosPage() {
                 <label className="block text-sm font-medium text-[#2D3436] mb-1.5">Teléfono</label>
                 <input type="tel" value={form.phone}
                   onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                  className="w-full px-4 py-3 bg-white border border-[#D5DBDB] rounded-xl text-[15px] focus:outline-none focus:border-nutri-primary focus:ring-2 focus:ring-[rgba(74,124,89,0.1)] transition-all" />
+                  className="w-full px-4 py-3 bg-white border border-[#D5DBDB] rounded-xl text-[15px] focus:outline-none focus:border-nutri-primary focus:ring-2 focus:ring-[rgba(248,201,216,0.2)] transition-all" />
               </div>
               <div>
                 <label className="block text-sm font-medium text-[#2D3436] mb-1.5">Fecha de nacimiento</label>
@@ -90,7 +90,7 @@ export function DatosPage() {
                 <label className="block text-sm font-medium text-[#2D3436] mb-1.5">Dirección</label>
                 <input type="text" value={form.address}
                   onChange={(e) => setForm({ ...form, address: e.target.value })}
-                  className="w-full px-4 py-3 bg-white border border-[#D5DBDB] rounded-xl text-[15px] focus:outline-none focus:border-nutri-primary focus:ring-2 focus:ring-[rgba(74,124,89,0.1)] transition-all" />
+                  className="w-full px-4 py-3 bg-white border border-[#D5DBDB] rounded-xl text-[15px] focus:outline-none focus:border-nutri-primary focus:ring-2 focus:ring-[rgba(248,201,216,0.2)] transition-all" />
               </div>
             </div>
 
@@ -136,7 +136,7 @@ export function DatosPage() {
                 <label className="block text-sm font-medium text-[#2D3436] mb-1.5">Condiciones</label>
                 <div className="flex flex-wrap gap-2">
                   {patientData.conditions.map((c) => (
-                    <span key={c} className="px-3 py-1.5 rounded-full bg-[rgba(74,124,89,0.1)] text-nutri-primary text-xs font-medium">
+                    <span key={c} className="px-3 py-1.5 rounded-full bg-[rgba(248,201,216,0.2)] text-nutri-primary text-xs font-medium">
                       {c}
                     </span>
                   ))}
@@ -160,19 +160,19 @@ export function DatosPage() {
                 <label className="block text-sm font-medium text-[#2D3436] mb-1.5">Contraseña actual</label>
                 <input type="password" value={passwordForm.current}
                   onChange={(e) => setPasswordForm({ ...passwordForm, current: e.target.value })}
-                  className="w-full px-4 py-3 bg-white border border-[#D5DBDB] rounded-xl text-[15px] focus:outline-none focus:border-nutri-primary focus:ring-2 focus:ring-[rgba(74,124,89,0.1)] transition-all" />
+                  className="w-full px-4 py-3 bg-white border border-[#D5DBDB] rounded-xl text-[15px] focus:outline-none focus:border-nutri-primary focus:ring-2 focus:ring-[rgba(248,201,216,0.2)] transition-all" />
               </div>
               <div>
                 <label className="block text-sm font-medium text-[#2D3436] mb-1.5">Nueva contraseña</label>
                 <input type="password" value={passwordForm.new}
                   onChange={(e) => setPasswordForm({ ...passwordForm, new: e.target.value })}
-                  className="w-full px-4 py-3 bg-white border border-[#D5DBDB] rounded-xl text-[15px] focus:outline-none focus:border-nutri-primary focus:ring-2 focus:ring-[rgba(74,124,89,0.1)] transition-all" />
+                  className="w-full px-4 py-3 bg-white border border-[#D5DBDB] rounded-xl text-[15px] focus:outline-none focus:border-nutri-primary focus:ring-2 focus:ring-[rgba(248,201,216,0.2)] transition-all" />
               </div>
               <div>
                 <label className="block text-sm font-medium text-[#2D3436] mb-1.5">Confirmar nueva contraseña</label>
                 <input type="password" value={passwordForm.confirm}
                   onChange={(e) => setPasswordForm({ ...passwordForm, confirm: e.target.value })}
-                  className="w-full px-4 py-3 bg-white border border-[#D5DBDB] rounded-xl text-[15px] focus:outline-none focus:border-nutri-primary focus:ring-2 focus:ring-[rgba(74,124,89,0.1)] transition-all" />
+                  className="w-full px-4 py-3 bg-white border border-[#D5DBDB] rounded-xl text-[15px] focus:outline-none focus:border-nutri-primary focus:ring-2 focus:ring-[rgba(248,201,216,0.2)] transition-all" />
               </div>
               <button onClick={handlePasswordChange}
                 className="flex items-center gap-2 px-6 py-3 text-sm font-semibold text-nutri-primary border-2 border-nutri-primary rounded-xl hover:bg-nutri-primary hover:text-white transition-all">

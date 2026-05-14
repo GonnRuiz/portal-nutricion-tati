@@ -109,7 +109,7 @@ export function AdminPage() {
   return (
     <div className="min-h-screen bg-nutri-background">
       {/* Header */}
-      <header className="bg-white border-b border-[rgba(74,124,89,0.08)] px-6 py-4">
+      <header className="bg-white border-b border-[rgba(248,201,216,0.15)] px-6 py-4">
         <div className="max-w-[1280px] mx-auto flex items-center justify-between">
           <h1 className="font-display font-semibold text-xl text-[#2D3436]">Panel de Administración</h1>
           <div className="flex items-center gap-3">
@@ -124,7 +124,7 @@ export function AdminPage() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
           <ScrollReveal>
             <div className="bg-white rounded-2xl p-5 shadow-card flex items-center gap-4">
-              <div className="w-12 h-12 rounded-xl bg-[rgba(74,124,89,0.1)] flex items-center justify-center">
+              <div className="w-12 h-12 rounded-xl bg-[rgba(248,201,216,0.2)] flex items-center justify-center">
                 <FileText className="w-6 h-6 text-nutri-primary" />
               </div>
               <div>
@@ -146,7 +146,7 @@ export function AdminPage() {
           </ScrollReveal>
           <ScrollReveal delay={200}>
             <div className="bg-white rounded-2xl p-5 shadow-card flex items-center gap-4">
-              <div className="w-12 h-12 rounded-xl bg-[rgba(212,163,115,0.15)] flex items-center justify-center">
+              <div className="w-12 h-12 rounded-xl bg-[rgba(185,243,229,0.3)] flex items-center justify-center">
                 <CalendarDays className="w-6 h-6 text-nutri-secondary" />
               </div>
               <div>
@@ -170,7 +170,7 @@ export function AdminPage() {
 
         {/* Articles section */}
         <div className="bg-white rounded-2xl shadow-card">
-          <div className="p-6 border-b border-[rgba(74,124,89,0.08)] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div className="p-6 border-b border-[rgba(248,201,216,0.15)] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <h2 className="font-semibold text-lg text-[#2D3436]">Gestión de Artículos</h2>
             <div className="flex items-center gap-3">
               <div className="relative">
@@ -180,7 +180,7 @@ export function AdminPage() {
                   placeholder="Buscar artículos..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="pl-9 pr-4 py-2 border border-[#D5DBDB] rounded-xl text-sm focus:outline-none focus:border-nutri-primary focus:ring-2 focus:ring-[rgba(74,124,89,0.1)] transition-all"
+                  className="pl-9 pr-4 py-2 border border-[#D5DBDB] rounded-xl text-sm focus:outline-none focus:border-nutri-primary focus:ring-2 focus:ring-[rgba(248,201,216,0.2)] transition-all"
                 />
               </div>
               <button
@@ -197,7 +197,7 @@ export function AdminPage() {
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead>
-                <tr className="border-b border-[rgba(74,124,89,0.08)]">
+                <tr className="border-b border-[rgba(248,201,216,0.15)]">
                   <th className="text-left px-6 py-4 text-sm font-medium text-[#636E72]">Título</th>
                   <th className="text-left px-6 py-4 text-sm font-medium text-[#636E72]">Categoría</th>
                   <th className="text-left px-6 py-4 text-sm font-medium text-[#636E72]">Fecha</th>
@@ -207,7 +207,7 @@ export function AdminPage() {
               </thead>
               <tbody>
                 {filteredArticles.map((article) => (
-                  <tr key={article.id} className="border-b border-[rgba(74,124,89,0.05)] hover:bg-[rgba(74,124,89,0.02)] transition-colors">
+                  <tr key={article.id} className="border-b border-[rgba(248,201,216,0.1)] hover:bg-[rgba(248,201,216,0.05)] transition-colors">
                     <td className="px-6 py-4">
                       <div className="flex items-center gap-3">
                         <img src={img(article.image)} alt="" className="w-10 h-10 rounded-lg object-cover" />
@@ -215,7 +215,7 @@ export function AdminPage() {
                       </div>
                     </td>
                     <td className="px-6 py-4">
-                      <span className="px-2 py-1 rounded-full bg-[rgba(212,163,115,0.15)] text-nutri-secondary text-xs font-medium">
+                      <span className="px-2 py-1 rounded-full bg-[rgba(185,243,229,0.3)] text-nutri-secondary text-xs font-medium">
                         {article.category}
                       </span>
                     </td>
@@ -229,7 +229,7 @@ export function AdminPage() {
                       <div className="flex items-center gap-2">
                         <button
                           onClick={() => handleEdit(article)}
-                          className="p-2 rounded-lg text-[#636E72] hover:bg-[rgba(74,124,89,0.1)] hover:text-nutri-primary transition-all"
+                          className="p-2 rounded-lg text-[#636E72] hover:bg-[rgba(248,201,216,0.2)] hover:text-nutri-primary transition-all"
                           title="Editar"
                         >
                           <Edit className="w-4 h-4" />
@@ -255,7 +255,7 @@ export function AdminPage() {
       {showForm && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm">
           <div className="bg-white rounded-2xl w-full max-w-2xl max-h-[90vh] overflow-auto shadow-modal">
-            <div className="p-6 border-b border-[rgba(74,124,89,0.08)] flex items-center justify-between">
+            <div className="p-6 border-b border-[rgba(248,201,216,0.15)] flex items-center justify-between">
               <h3 className="font-semibold text-lg text-[#2D3436]">
                 {editingArticle ? 'Editar Artículo' : 'Nuevo Artículo'}
               </h3>
@@ -273,7 +273,7 @@ export function AdminPage() {
                     setForm({ ...form, title: e.target.value, slug: generateSlug(e.target.value) });
                   }}
                   required
-                  className="w-full px-4 py-3 border border-[#D5DBDB] rounded-xl text-[15px] focus:outline-none focus:border-nutri-primary focus:ring-2 focus:ring-[rgba(74,124,89,0.1)] transition-all"
+                  className="w-full px-4 py-3 border border-[#D5DBDB] rounded-xl text-[15px] focus:outline-none focus:border-nutri-primary focus:ring-2 focus:ring-[rgba(248,201,216,0.2)] transition-all"
                 />
               </div>
               <div>
@@ -282,7 +282,7 @@ export function AdminPage() {
                   type="text"
                   value={form.slug}
                   onChange={(e) => setForm({ ...form, slug: e.target.value })}
-                  className="w-full px-4 py-3 border border-[#D5DBDB] rounded-xl text-[15px] focus:outline-none focus:border-nutri-primary focus:ring-2 focus:ring-[rgba(74,124,89,0.1)] transition-all"
+                  className="w-full px-4 py-3 border border-[#D5DBDB] rounded-xl text-[15px] focus:outline-none focus:border-nutri-primary focus:ring-2 focus:ring-[rgba(248,201,216,0.2)] transition-all"
                 />
               </div>
               <div>
@@ -290,7 +290,7 @@ export function AdminPage() {
                 <select
                   value={form.category}
                   onChange={(e) => setForm({ ...form, category: e.target.value })}
-                  className="w-full px-4 py-3 border border-[#D5DBDB] rounded-xl text-[15px] focus:outline-none focus:border-nutri-primary focus:ring-2 focus:ring-[rgba(74,124,89,0.1)] transition-all"
+                  className="w-full px-4 py-3 border border-[#D5DBDB] rounded-xl text-[15px] focus:outline-none focus:border-nutri-primary focus:ring-2 focus:ring-[rgba(248,201,216,0.2)] transition-all"
                 >
                   {CATEGORIES.map((cat) => (
                     <option key={cat} value={cat}>{cat}</option>
@@ -303,7 +303,7 @@ export function AdminPage() {
                   value={form.excerpt}
                   onChange={(e) => setForm({ ...form, excerpt: e.target.value })}
                   rows={2}
-                  className="w-full px-4 py-3 border border-[#D5DBDB] rounded-xl text-[15px] focus:outline-none focus:border-nutri-primary focus:ring-2 focus:ring-[rgba(74,124,89,0.1)] transition-all resize-y"
+                  className="w-full px-4 py-3 border border-[#D5DBDB] rounded-xl text-[15px] focus:outline-none focus:border-nutri-primary focus:ring-2 focus:ring-[rgba(248,201,216,0.2)] transition-all resize-y"
                 />
               </div>
               <div>
@@ -312,7 +312,7 @@ export function AdminPage() {
                   value={form.content}
                   onChange={(e) => setForm({ ...form, content: e.target.value })}
                   rows={8}
-                  className="w-full px-4 py-3 border border-[#D5DBDB] rounded-xl text-[15px] focus:outline-none focus:border-nutri-primary focus:ring-2 focus:ring-[rgba(74,124,89,0.1)] transition-all resize-y font-mono text-sm"
+                  className="w-full px-4 py-3 border border-[#D5DBDB] rounded-xl text-[15px] focus:outline-none focus:border-nutri-primary focus:ring-2 focus:ring-[rgba(248,201,216,0.2)] transition-all resize-y font-mono text-sm"
                 />
               </div>
               <div className="flex items-center justify-end gap-3 pt-4">

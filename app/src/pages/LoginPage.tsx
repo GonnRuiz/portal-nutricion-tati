@@ -51,11 +51,11 @@ export function LoginPage() {
           alt="Nutricionista"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-[rgba(74,124,89,0.8)] to-[rgba(58,99,71,0.85)]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[rgba(248,201,216,0.9)] to-[rgba(185,243,229,0.85)]" />
         <div className="relative z-10 flex flex-col justify-center px-16 text-white">
-          <h2 className="font-display font-bold text-4xl mb-4">Bienvenido de vuelta</h2>
+          <h2 className="font-display font-bold text-4xl mb-4">Bienvenida/o</h2>
           <p className="text-[rgba(255,255,255,0.85)] text-lg max-w-md">
-            Continúa tu camino hacia una vida más saludable. Accede a tu portal de paciente para revisar tu plan, agendar consultas y monitorear tu progreso.
+            Accedé a tu portal para revisar tu plan sin gluten, agendar consultas y seguir tu progreso.
           </p>
         </div>
       </div>
@@ -80,7 +80,7 @@ export function LoginPage() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
-                    className="w-full pl-12 pr-4 py-3 bg-white border border-[#D5DBDB] rounded-xl text-[15px] focus:outline-none focus:border-nutri-primary focus:ring-2 focus:ring-[rgba(74,124,89,0.1)] transition-all"
+                    className="w-full pl-12 pr-4 py-3 bg-white border border-[#D5DBDB] rounded-xl text-[15px] focus:outline-none focus:border-nutri-primary focus:ring-2 focus:ring-[rgba(248,201,216,0.2)] transition-all"
                   />
                 </div>
               </div>
@@ -97,7 +97,7 @@ export function LoginPage() {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
-                    className="w-full pl-12 pr-12 py-3 bg-white border border-[#D5DBDB] rounded-xl text-[15px] focus:outline-none focus:border-nutri-primary focus:ring-2 focus:ring-[rgba(74,124,89,0.1)] transition-all"
+                    className="w-full pl-12 pr-12 py-3 bg-white border border-[#D5DBDB] rounded-xl text-[15px] focus:outline-none focus:border-nutri-primary focus:ring-2 focus:ring-[rgba(248,201,216,0.2)] transition-all"
                   />
                   <button
                     type="button"
@@ -142,7 +142,7 @@ export function LoginPage() {
 
             <div className="relative my-6">
               <div className="absolute inset-0 flex items-center">
-                <div className="w-full border-t border-[rgba(74,124,89,0.1)]" />
+                <div className="w-full border-t border-[rgba(248,201,216,0.2)]" />
               </div>
               <div className="relative flex justify-center text-sm">
                 <span className="px-4 bg-white text-[#B2BEC3]">o</span>
@@ -151,7 +151,7 @@ export function LoginPage() {
 
             <Link
               to="/registro"
-              className="block w-full py-3 text-sm font-semibold text-[#636E72] text-center rounded-xl hover:bg-[rgba(74,124,89,0.08)] hover:text-nutri-primary transition-all duration-200"
+              className="block w-full py-3 text-sm font-semibold text-[#636E72] text-center rounded-xl hover:bg-[rgba(248,201,216,0.15)] hover:text-nutri-primary transition-all duration-200"
             >
               Crear cuenta nueva
             </Link>

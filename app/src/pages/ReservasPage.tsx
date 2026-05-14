@@ -133,7 +133,7 @@ export function ReservasPage() {
                           ? 'text-[#B2BEC3] line-through cursor-not-allowed'
                           : !isCurrent
                           ? 'text-[#D5DBDB]'
-                          : 'text-[#2D3436] hover:bg-[rgba(74,124,89,0.08)]'
+                          : 'text-[#2D3436] hover:bg-[rgba(248,201,216,0.15)]'
                       }`}
                     >
                       {item.day}
@@ -165,7 +165,7 @@ export function ReservasPage() {
                             ? 'bg-nutri-primary text-white'
                             : occupied
                             ? 'bg-[#F7F5F0] text-[#B2BEC3] line-through cursor-not-allowed'
-                            : 'border border-[rgba(74,124,89,0.15)] text-[#2D3436] hover:border-nutri-primary hover:text-nutri-primary'
+                            : 'border border-[rgba(248,201,216,0.25)] text-[#2D3436] hover:border-nutri-primary hover:text-nutri-primary'
                         }`}
                       >
                         {time}
@@ -189,7 +189,7 @@ export function ReservasPage() {
                     <select
                       value={consultType.label}
                       onChange={(e) => setConsultType(CONSULTATION_TYPES.find(c => c.label === e.target.value) || CONSULTATION_TYPES[1])}
-                      className="w-full px-4 py-3 bg-white border border-[#D5DBDB] rounded-xl text-[15px] focus:outline-none focus:border-nutri-primary focus:ring-2 focus:ring-[rgba(74,124,89,0.1)] transition-all"
+                      className="w-full px-4 py-3 bg-white border border-[#D5DBDB] rounded-xl text-[15px] focus:outline-none focus:border-nutri-primary focus:ring-2 focus:ring-[rgba(248,201,216,0.2)] transition-all"
                     >
                       {CONSULTATION_TYPES.map((type) => (
                         <option key={type.label} value={type.label}>
@@ -206,7 +206,7 @@ export function ReservasPage() {
                       onChange={(e) => setNotes(e.target.value)}
                       placeholder="¿Hay algo específico que quieras tratar?"
                       rows={3}
-                      className="w-full px-4 py-3 bg-white border border-[#D5DBDB] rounded-xl text-[15px] focus:outline-none focus:border-nutri-primary focus:ring-2 focus:ring-[rgba(74,124,89,0.1)] transition-all resize-y"
+                      className="w-full px-4 py-3 bg-white border border-[#D5DBDB] rounded-xl text-[15px] focus:outline-none focus:border-nutri-primary focus:ring-2 focus:ring-[rgba(248,201,216,0.2)] transition-all resize-y"
                     />
                   </div>
 
@@ -242,7 +242,7 @@ export function ReservasPage() {
                     <span className="text-[#636E72]">Tipo</span>
                     <span className="font-medium text-[#2D3436]">{consultType.label}</span>
                   </div>
-                  <div className="flex justify-between pt-3 border-t border-[rgba(74,124,89,0.1)]">
+                  <div className="flex justify-between pt-3 border-t border-[rgba(248,201,216,0.2)]">
                     <span className="text-[#636E72]">Precio estimado</span>
                     <span className="font-semibold text-nutri-primary">${consultType.price}.00</span>
                   </div>

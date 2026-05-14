@@ -20,7 +20,7 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 const MOCK_USERS = [
   { id: '1', name: 'Laura Martínez', email: 'paciente@demo.com', password: 'demo123', role: 'patient' as const, avatar: '/images/testimonial-1.jpg' },
-  { id: '2', name: 'Dra. María González', email: 'admin@nutrivida.com', password: 'admin123', role: 'admin' as const, avatar: '/images/about-portrait.jpg' },
+  { id: '2', name: 'Lic. Tatiana Castel', email: 'admin@nutrivida.com', password: 'admin123', role: 'admin' as const, avatar: '/images/about-portrait.jpg' },
 ];
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {

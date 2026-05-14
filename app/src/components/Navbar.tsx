@@ -58,16 +58,16 @@ export function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-[rgba(247,245,240,0.95)] backdrop-blur-xl shadow-nav'
-          : 'bg-[rgba(247,245,240,0.85)] backdrop-blur-md'
+          ? 'bg-white/95 backdrop-blur-xl shadow-nav'
+          : 'bg-white/85 backdrop-blur-md'
       }`}
-      style={{ borderBottom: '1px solid rgba(74, 124, 89, 0.08)' }}
+      style={{ borderBottom: '1px solid rgba(248, 201, 216, 0.2)' }}
     >
       <div className="max-w-[1280px] mx-auto px-6 h-[72px] flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
           <Leaf className="w-7 h-7 text-nutri-primary" strokeWidth={2} />
-          <span className="font-display font-bold text-[22px] text-nutri-primary">NutriVida</span>
+          <span className="font-display font-bold text-[22px] text-nutri-primary">Nutrición Tatí</span>
         </Link>
 
         {/* Desktop Nav Links */}
@@ -103,7 +103,7 @@ export function Navbar() {
               </Link>
               <button
                 onClick={logout}
-                className="flex items-center gap-2 px-4 py-2.5 text-[14px] font-semibold text-[#636E72] hover:text-nutri-primary hover:bg-[rgba(74,124,89,0.08)] rounded-xl transition-all duration-200"
+                className="flex items-center gap-2 px-4 py-2.5 text-[14px] font-semibold text-[#636E72] hover:text-nutri-primary hover:bg-[rgba(248,201,216,0.15)] rounded-xl transition-all duration-200"
               >
                 <LogOut className="w-4 h-4" />
                 Cerrar Sesión
@@ -138,10 +138,10 @@ export function Navbar() {
           </SheetTrigger>
           <SheetContent side="right" className="w-[300px] bg-nutri-background p-0">
             <div className="flex flex-col h-full">
-              <div className="p-6 border-b border-[rgba(74,124,89,0.1)]">
+              <div className="p-6 border-b border-[rgba(248,201,216,0.2)]">
                 <Link to="/" className="flex items-center gap-2">
                   <Leaf className="w-7 h-7 text-nutri-primary" />
-                  <span className="font-display font-bold text-[22px] text-nutri-primary">NutriVida</span>
+                  <span className="font-display font-bold text-[22px] text-nutri-primary">Nutrición Tatí</span>
                 </Link>
               </div>
               <nav className="flex-1 p-6 flex flex-col gap-2">
@@ -152,7 +152,7 @@ export function Navbar() {
                       scrollToSection(link.path);
                       setMobileOpen(false);
                     }}
-                    className="text-left px-4 py-3 text-[15px] font-medium text-[#636E72] hover:text-nutri-primary hover:bg-[rgba(74,124,89,0.08)] rounded-xl transition-all duration-200"
+                    className="text-left px-4 py-3 text-[15px] font-medium text-[#636E72] hover:text-nutri-primary hover:bg-[rgba(248,201,216,0.15)] rounded-xl transition-all duration-200"
                   >
                     {link.label}
                   </button>
@@ -160,7 +160,7 @@ export function Navbar() {
                 {isAuthenticated && (
                   <Link
                     to={user?.role === 'admin' ? '/admin' : '/dashboard'}
-                    className="flex items-center gap-2 px-4 py-3 text-[15px] font-medium text-nutri-primary hover:bg-[rgba(74,124,89,0.08)] rounded-xl transition-all duration-200"
+                    className="flex items-center gap-2 px-4 py-3 text-[15px] font-medium text-nutri-primary hover:bg-[rgba(248,201,216,0.15)] rounded-xl transition-all duration-200"
                     onClick={() => setMobileOpen(false)}
                   >
                     <LayoutDashboard className="w-4 h-4" />
@@ -168,14 +168,14 @@ export function Navbar() {
                   </Link>
                 )}
               </nav>
-              <div className="p-6 border-t border-[rgba(74,124,89,0.1)]">
+              <div className="p-6 border-t border-[rgba(248,201,216,0.2)]">
                 {isAuthenticated ? (
                   <button
                     onClick={() => {
                       logout();
                       setMobileOpen(false);
                     }}
-                    className="w-full flex items-center justify-center gap-2 px-4 py-3 text-[14px] font-semibold text-[#636E72] hover:text-nutri-primary border border-[rgba(74,124,89,0.2)] rounded-xl transition-all duration-200"
+                    className="w-full flex items-center justify-center gap-2 px-4 py-3 text-[14px] font-semibold text-[#636E72] hover:text-nutri-primary border border-[rgba(248,201,216,0.3)] rounded-xl transition-all duration-200"
                   >
                     <LogOut className="w-4 h-4" />
                     Cerrar Sesión

@@ -39,20 +39,20 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
 
       {/* Sidebar */}
       <aside
-        className={`fixed lg:static inset-y-0 left-0 z-50 w-[260px] bg-white border-r border-[rgba(74,124,89,0.08)] flex flex-col transform transition-transform duration-300 lg:transform-none ${
+        className={`fixed lg:static inset-y-0 left-0 z-50 w-[260px] bg-white border-r border-[rgba(248,201,216,0.15)] flex flex-col transform transition-transform duration-300 lg:transform-none ${
           sidebarOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
         {/* Logo */}
-        <div className="p-6 border-b border-[rgba(74,124,89,0.08)]">
+        <div className="p-6 border-b border-[rgba(248,201,216,0.15)]">
           <Link to="/" className="flex items-center gap-2">
             <Leaf className="w-6 h-6 text-nutri-primary" strokeWidth={2} />
-            <span className="font-display font-bold text-lg text-nutri-primary">NutriVida</span>
+            <span className="font-display font-bold text-lg text-nutri-primary">Nutrición Tatí</span>
           </Link>
         </div>
 
         {/* User info */}
-        <div className="p-6 border-b border-[rgba(74,124,89,0.08)]">
+        <div className="p-6 border-b border-[rgba(248,201,216,0.15)]">
           <div className="flex items-center gap-3">
             <img
               src={user?.avatar ? img(user.avatar) : img('/images/avatar-default.jpg')}
@@ -75,8 +75,8 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
               onClick={() => setSidebarOpen(false)}
               className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 ${
                 isActive(link.path)
-                  ? 'bg-[rgba(74,124,89,0.1)] text-nutri-primary'
-                  : 'text-[#636E72] hover:bg-[rgba(74,124,89,0.05)] hover:text-nutri-primary'
+                  ? 'bg-[rgba(248,201,216,0.2)] text-nutri-primary'
+                  : 'text-[#636E72] hover:bg-[rgba(248,201,216,0.1)] hover:text-nutri-primary'
               }`}
             >
               <link.icon className="w-5 h-5" />
@@ -86,10 +86,10 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
         </nav>
 
         {/* Logout */}
-        <div className="p-4 border-t border-[rgba(74,124,89,0.08)]">
+        <div className="p-4 border-t border-[rgba(248,201,216,0.15)]">
           <button
             onClick={handleLogout}
-            className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-[#636E72] hover:bg-[rgba(74,124,89,0.05)] hover:text-nutri-primary transition-all duration-200 w-full"
+            className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-[#636E72] hover:bg-[rgba(248,201,216,0.1)] hover:text-nutri-primary transition-all duration-200 w-full"
           >
             <LogOut className="w-5 h-5" />
             Cerrar Sesión
@@ -100,14 +100,14 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
       {/* Main content */}
       <div className="flex-1 flex flex-col min-w-0">
         {/* Mobile header */}
-        <header className="lg:hidden bg-white border-b border-[rgba(74,124,89,0.08)] px-4 py-3 flex items-center justify-between">
+        <header className="lg:hidden bg-white border-b border-[rgba(248,201,216,0.15)] px-4 py-3 flex items-center justify-between">
           <button
             onClick={() => setSidebarOpen(true)}
             className="p-2 text-[#636E72] hover:text-nutri-primary transition-colors"
           >
             <Menu className="w-6 h-6" />
           </button>
-          <span className="font-display font-semibold text-nutri-primary">NutriVida</span>
+          <span className="font-display font-semibold text-nutri-primary">Nutrición Tatí</span>
           <div className="w-10" />
         </header>
 

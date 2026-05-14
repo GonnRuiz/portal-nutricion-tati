@@ -38,7 +38,7 @@ export function ArticlePage() {
 
       <article className="max-w-[720px] mx-auto px-6 py-8">
         <ScrollReveal>
-          <span className="inline-block px-3 py-1 rounded-full bg-[rgba(212,163,115,0.15)] text-nutri-secondary text-xs font-medium mb-4">
+          <span className="inline-block px-3 py-1 rounded-full bg-[rgba(185,243,229,0.3)] text-nutri-secondary text-xs font-medium mb-4">
             {post.category}
           </span>
           <h1 className="font-display font-bold text-3xl md:text-[42px] text-[#2D3436] leading-tight mb-4">
@@ -74,7 +74,7 @@ export function ArticlePage() {
         {/* Related Posts */}
         {relatedPosts.length > 0 && (
           <ScrollReveal>
-            <div className="mt-16 pt-8 border-t border-[rgba(74,124,89,0.1)]">
+            <div className="mt-16 pt-8 border-t border-[rgba(248,201,216,0.2)]">
               <h3 className="font-display font-semibold text-xl text-[#2D3436] mb-6">
                 Artículos Relacionados
               </h3>
@@ -104,7 +104,7 @@ export function ArticlePage() {
         )}
 
         {/* Navigation */}
-        <div className="mt-12 pt-8 border-t border-[rgba(74,124,89,0.1)]">
+        <div className="mt-12 pt-8 border-t border-[rgba(248,201,216,0.2)]">
           <div className="flex justify-between">
             {prevPost ? (
               <Link

@@ -43,21 +43,21 @@ export const testimonials: Testimonial[] = [
   {
     id: '1',
     name: 'Laura Martínez',
-    text: 'María cambió completamente mi relación con la comida. Perdí 12 kilos en 6 meses de forma saludable y lo mejor es que no pasé hambre. Su enfoque personalizado hizo toda la diferencia.',
+    text: 'Cuando me diagnosticaron celiaquía pensé que no volvería a comer rico. Tatiana me demostró que estaba equivocada. Su plan no solo es libre de gluten, sino delicioso y variado.',
     image: '/images/testimonial-1.jpg',
     rating: 5,
   },
   {
     id: '2',
     name: 'Carlos Rodríguez',
-    text: 'Llevaba años luchando con mi peso y nada funcionaba. El plan de María fue el primero que realmente se adaptó a mi vida. Bajé 15kg y mis niveles de azúcar mejoraron dramáticamente.',
+    text: 'Dejé el gluten por recomendación médica y no sabía por dónde empezar. Tatiana me guió en todo el proceso, con mucha paciencia y conocimiento. Hoy me siento mejor que nunca.',
     image: '/images/testimonial-2.jpg',
     rating: 5,
   },
   {
     id: '3',
     name: 'Ana Fernández',
-    text: 'Como persona con intolerancias alimentarias, encontrar una nutricionista que entienda fue un alivio. María diseñó un plan delicioso y nutritivo que funciona perfectamente para mí.',
+    text: 'Además de celíaca, tengo problemas inflamatorios. Tatiana combinó ambas cosas en un plan antiinflamatorio sin gluten que cambió mi vida. Y encima entiende porque lo vive en primera persona.',
     image: '/images/testimonial-3.jpg',
     rating: 5,
   },
@@ -383,15 +383,15 @@ export const upcomingAppointments = [
 export const patientData = {
   name: 'Laura Martínez',
   email: 'laura@email.com',
-  phone: '+1 234 567 890',
+  phone: '+54 11 2345 6789',
   birthDate: '15/04/1990',
   gender: 'Femenino',
-  address: 'Calle Principal 123, Ciudad',
+  address: 'Calle Principal 123, CABA',
   height: 165,
   initialWeight: 75,
   targetWeight: 65,
   currentWeight: 72.5,
-  conditions: ['Prediabetes'],
+  conditions: ['Celiaquía'],
   allergies: 'Ninguna',
 };
 

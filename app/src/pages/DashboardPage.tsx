@@ -8,7 +8,7 @@ function StatCard({ icon: Icon, title, value, subtitle, subtitleColor, link, lin
     <div className="bg-white rounded-2xl p-6 shadow-card">
       <div className="flex items-start justify-between mb-4">
         <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${
-          title === 'Próxima Consulta' ? 'bg-[rgba(74,124,89,0.1)]' :
+          title === 'Próxima Consulta' ? 'bg-[rgba(248,201,216,0.2)]' :
           title === 'Plan Activo' ? 'bg-[rgba(39,174,96,0.1)]' :
           title === 'Peso Actual' ? 'bg-[rgba(212,163,115,0.1)]' :
           'bg-[rgba(243,156,18,0.1)]'
@@ -50,12 +50,12 @@ function ProgressChart() {
         <svg viewBox="0 0 100 100" className="w-full h-full" preserveAspectRatio="none">
           {/* Grid lines */}
           {[0, 25, 50, 75, 100].map(y => (
-            <line key={y} x1="0" y1={y} x2="100" y2={y} stroke="rgba(74,124,89,0.08)" strokeWidth="0.5" />
+            <line key={y} x1="0" y1={y} x2="100" y2={y} stroke="rgba(248,201,216,0.15)" strokeWidth="0.5" />
           ))}
           {/* Area */}
           <polygon
             points={`0,100 ${points} 100,100`}
-            fill="rgba(74,124,89,0.1)"
+            fill="rgba(248,201,216,0.2)"
           />
           {/* Line */}
           <polyline
@@ -94,8 +94,8 @@ function TodayMeals() {
       <h3 className="font-semibold text-lg text-[#2D3436] mb-4">Hoy - Menú</h3>
       <div className="space-y-3">
         {today.meals.map((meal, i) => (
-          <div key={i} className="flex items-center gap-4 p-3 rounded-xl hover:bg-[rgba(74,124,89,0.03)] transition-colors">
-            <div className="w-10 h-10 rounded-lg bg-[rgba(74,124,89,0.1)] flex items-center justify-center shrink-0">
+          <div key={i} className="flex items-center gap-4 p-3 rounded-xl hover:bg-[rgba(248,201,216,0.08)] transition-colors">
+            <div className="w-10 h-10 rounded-lg bg-[rgba(248,201,216,0.2)] flex items-center justify-center shrink-0">
               {i === 0 ? <Sun className="w-5 h-5 text-nutri-primary" /> :
                i === today.meals.length - 1 ? <Moon className="w-5 h-5 text-nutri-primary" /> :
                <Apple className="w-5 h-5 text-nutri-primary" />}
@@ -104,7 +104,7 @@ function TodayMeals() {
               <p className="text-xs text-[#B2BEC3]">{meal.time}</p>
               <p className="text-sm font-medium text-[#2D3436] truncate">{meal.name}</p>
             </div>
-            <button className="w-8 h-8 rounded-full border-2 border-[rgba(74,124,89,0.2)] flex items-center justify-center hover:bg-nutri-primary hover:border-nutri-primary group transition-all">
+            <button className="w-8 h-8 rounded-full border-2 border-[rgba(248,201,216,0.3)] flex items-center justify-center hover:bg-nutri-primary hover:border-nutri-primary group transition-all">
               <Check className="w-4 h-4 text-transparent group-hover:text-white transition-colors" />
             </button>
           </div>

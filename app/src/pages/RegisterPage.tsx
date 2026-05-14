@@ -57,11 +57,11 @@ export function RegisterPage() {
           alt="Nutricionista"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-[rgba(74,124,89,0.8)] to-[rgba(58,99,71,0.85)]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[rgba(248,201,216,0.9)] to-[rgba(185,243,229,0.85)]" />
         <div className="relative z-10 flex flex-col justify-center px-16 text-white">
-          <h2 className="font-display font-bold text-4xl mb-4">Únete a NutriVida</h2>
+          <h2 className="font-display font-bold text-4xl mb-4">Unite a Nutrición Tatí</h2>
           <p className="text-[rgba(255,255,255,0.85)] text-lg max-w-md">
-            Crea tu cuenta y comienza tu transformación hacia una vida más saludable con planes de nutrición personalizados.
+            Crea tu cuenta y empezá tu camino hacia una alimentación libre de gluten y antiinflamatoria, con planes 100% personalizados.
           </p>
         </div>
       </div>
@@ -89,7 +89,7 @@ export function RegisterPage() {
                     value={form.name}
                     onChange={handleChange}
                     required
-                    className="w-full pl-12 pr-4 py-3 bg-white border border-[#D5DBDB] rounded-xl text-[15px] focus:outline-none focus:border-nutri-primary focus:ring-2 focus:ring-[rgba(74,124,89,0.1)] transition-all"
+                    className="w-full pl-12 pr-4 py-3 bg-white border border-[#D5DBDB] rounded-xl text-[15px] focus:outline-none focus:border-nutri-primary focus:ring-2 focus:ring-[rgba(248,201,216,0.2)] transition-all"
                   />
                 </div>
               </div>
@@ -107,7 +107,7 @@ export function RegisterPage() {
                     value={form.email}
                     onChange={handleChange}
                     required
-                    className="w-full pl-12 pr-4 py-3 bg-white border border-[#D5DBDB] rounded-xl text-[15px] focus:outline-none focus:border-nutri-primary focus:ring-2 focus:ring-[rgba(74,124,89,0.1)] transition-all"
+                    className="w-full pl-12 pr-4 py-3 bg-white border border-[#D5DBDB] rounded-xl text-[15px] focus:outline-none focus:border-nutri-primary focus:ring-2 focus:ring-[rgba(248,201,216,0.2)] transition-all"
                   />
                 </div>
               </div>
@@ -124,7 +124,7 @@ export function RegisterPage() {
                     placeholder="+1 234 567 890"
                     value={form.phone}
                     onChange={handleChange}
-                    className="w-full pl-12 pr-4 py-3 bg-white border border-[#D5DBDB] rounded-xl text-[15px] focus:outline-none focus:border-nutri-primary focus:ring-2 focus:ring-[rgba(74,124,89,0.1)] transition-all"
+                    className="w-full pl-12 pr-4 py-3 bg-white border border-[#D5DBDB] rounded-xl text-[15px] focus:outline-none focus:border-nutri-primary focus:ring-2 focus:ring-[rgba(248,201,216,0.2)] transition-all"
                   />
                 </div>
               </div>
@@ -142,7 +142,7 @@ export function RegisterPage() {
                     value={form.password}
                     onChange={handleChange}
                     required
-                    className="w-full pl-12 pr-12 py-3 bg-white border border-[#D5DBDB] rounded-xl text-[15px] focus:outline-none focus:border-nutri-primary focus:ring-2 focus:ring-[rgba(74,124,89,0.1)] transition-all"
+                    className="w-full pl-12 pr-12 py-3 bg-white border border-[#D5DBDB] rounded-xl text-[15px] focus:outline-none focus:border-nutri-primary focus:ring-2 focus:ring-[rgba(248,201,216,0.2)] transition-all"
                   />
                   <button
                     type="button"
@@ -168,7 +168,7 @@ export function RegisterPage() {
                     value={form.confirmPassword}
                     onChange={handleChange}
                     required
-                    className="w-full pl-12 pr-4 py-3 bg-white border border-[#D5DBDB] rounded-xl text-[15px] focus:outline-none focus:border-nutri-primary focus:ring-2 focus:ring-[rgba(74,124,89,0.1)] transition-all"
+                    className="w-full pl-12 pr-4 py-3 bg-white border border-[#D5DBDB] rounded-xl text-[15px] focus:outline-none focus:border-nutri-primary focus:ring-2 focus:ring-[rgba(248,201,216,0.2)] transition-all"
                   />
                 </div>
               </div>

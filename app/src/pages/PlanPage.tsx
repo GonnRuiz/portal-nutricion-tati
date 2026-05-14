@@ -71,7 +71,7 @@ export function PlanPage() {
                 className={`px-4 py-2 rounded-xl text-sm font-medium whitespace-nowrap transition-all ${
                   selectedWeek === i
                     ? 'bg-nutri-primary text-white'
-                    : 'text-[#636E72] hover:bg-[rgba(74,124,89,0.08)]'
+                    : 'text-[#636E72] hover:bg-[rgba(248,201,216,0.15)]'
                 }`}
               >
                 Semana {w.week}
@@ -92,7 +92,7 @@ export function PlanPage() {
                 className={`flex-1 min-w-[60px] py-3 rounded-xl text-sm font-medium transition-all ${
                   selectedDay === i
                     ? 'bg-nutri-primary text-white'
-                    : 'text-[#636E72] hover:bg-[rgba(74,124,89,0.08)]'
+                    : 'text-[#636E72] hover:bg-[rgba(248,201,216,0.15)]'
                 }`}
               >
                 {day}
@@ -137,7 +137,7 @@ export function PlanPage() {
                           className={`w-8 h-8 rounded-full flex items-center justify-center transition-all ${
                             isCompleted
                               ? 'bg-green-500 text-white'
-                              : 'border-2 border-[rgba(74,124,89,0.2)] hover:border-nutri-primary'
+                              : 'border-2 border-[rgba(248,201,216,0.3)] hover:border-nutri-primary'
                           }`}
                         >
                           <Check className="w-4 h-4" />

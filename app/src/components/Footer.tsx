@@ -10,10 +10,10 @@ export function Footer() {
           <div>
             <Link to="/" className="flex items-center gap-2 mb-4">
               <Leaf className="w-6 h-6 text-nutri-accent-leaf" strokeWidth={2} />
-              <span className="font-display font-bold text-xl">NutriVida</span>
+              <span className="font-display font-bold text-xl">Nutrición Tatí</span>
             </Link>
             <p className="text-[rgba(255,255,255,0.7)] text-sm leading-relaxed mb-6">
-              Tu camino hacia una vida más saludable comienza aquí. Nutrición personalizada y profesional.
+              Nutrición personalizada libre de gluten. Te acompaño a encontrar tu equilibrio.
             </p>
             <div className="flex gap-4">
               <a href="#" className="w-10 h-10 rounded-full bg-[rgba(255,255,255,0.1)] flex items-center justify-center hover:bg-nutri-primary-light transition-colors">
@@ -74,7 +74,7 @@ export function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-nutri-accent-leaf shrink-0 mt-0.5" />
-                <span className="text-[rgba(255,255,255,0.7)] text-sm">info@nutrivida.com</span>
+                <span className="text-[rgba(255,255,255,0.7)] text-sm">tatiana@nutriciontati.com</span>
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-nutri-accent-leaf shrink-0 mt-0.5" />
@@ -95,7 +95,7 @@ export function Footer() {
         {/* Divider */}
         <div className="border-t border-[rgba(255,255,255,0.1)] pt-8">
           <p className="text-center text-[rgba(255,255,255,0.5)] text-sm">
-            © 2025 NutriVida. Todos los derechos reservados.
+            © 2025 Nutrición Tatí. Todos los derechos reservados.
           </p>
         </div>
       </div>

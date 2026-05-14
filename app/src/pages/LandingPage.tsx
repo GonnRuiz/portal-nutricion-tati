@@ -14,22 +14,22 @@ function HeroSection() {
           {/* Text */}
           <div>
             <div
-              className="inline-block px-4 py-1.5 rounded-full bg-[rgba(74,124,89,0.1)] text-nutri-primary text-sm font-medium uppercase tracking-wider mb-6"
+              className="inline-block px-4 py-1.5 rounded-full bg-[rgba(248,201,216,0.2)] text-nutri-primary text-sm font-medium uppercase tracking-wider mb-6"
               style={{ animation: 'fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards' }}
             >
-              Nutrición Personalizada & Profesional
+              Lic. Tatiana Castel — Nutricionista (UBA)
             </div>
             <h1
               className="font-display font-bold text-4xl md:text-5xl lg:text-[56px] leading-[1.1] text-[#2D3436] max-w-[540px]"
               style={{ animation: 'fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 150ms both' }}
             >
-              Transforma tu salud a través de la nutrición
+              Vivir sin gluten no es una moda, es mi historia
             </h1>
             <p
               className="text-lg text-[#636E72] max-w-[480px] mt-5"
               style={{ animation: 'fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 300ms both' }}
             >
-              Planes de alimentación personalizados, seguimiento profesional y el acompañamiento que necesitas para alcanzar tus objetivos de salud.
+              Te ayudo a sentirte bien con tu alimentación sin renunciar al placer. Planes libres de gluten, antiinflamatorios y 100% personalizados.
             </p>
             <div
               className="flex flex-wrap gap-4 mt-8"
@@ -73,7 +73,7 @@ function HeroSection() {
               <img
                 src={img("/images/hero-main.jpg")}
                 alt="Nutricionista profesional"
-                className="w-full rounded-[20px] shadow-[0_20px_60px_rgba(74,124,89,0.15)]"
+                className="w-full rounded-[20px] shadow-[0_20px_60px_rgba(248,201,216,0.25)]"
               />
             </div>
           </ScrollReveal>
@@ -89,22 +89,24 @@ function ServicesSection() {
     {
       icon: Video,
       image: '/images/service-consultation.jpg',
+      icon: Video,
+      image: '/images/service-consultation.jpg',
       title: 'Consultas Online',
-      description: 'Sesiones virtuales personalizadas donde evaluamos tu estado nutricional, revisamos tus objetivos y diseñamos un plan a tu medida.',
+      description: 'Sesiones virtuales donde evaluamos tu historia, tus hábitos y tus objetivos. Te escucho y diseñamos juntos el camino.',
       link: 'Agendar consulta',
     },
     {
       icon: ClipboardList,
       image: '/images/service-plan.jpg',
-      title: 'Planes de Alimentación',
-      description: 'Menús semanales diseñados específicamente para ti, considerando tus gustos, estilo de vida y objetivos de salud.',
+      title: 'Planes Sin Gluten',
+      description: 'Planes de alimentación libres de gluten y antiinflamatorios, pensados para que comas rico, variado y sin preocupaciones.',
       link: 'Ver ejemplo',
     },
     {
       icon: TrendingUp,
       image: '/images/service-tracking.jpg',
-      title: 'Seguimiento y Ajustes',
-      description: 'Monitoreo de tu progreso con ajustes periódicos a tu plan. Comunicación directa para resolver dudas en el camino.',
+      title: 'Acompañamiento Continuo',
+      description: 'No estás solx. Ajustamos el plan según tu evolución, resolvemos dudas y celebramos cada logro juntos.',
       link: 'Conocer más',
     },
   ];
@@ -113,21 +115,21 @@ function ServicesSection() {
     <section id="servicios" className="py-20 bg-white">
       <div className="max-w-[1280px] mx-auto px-6">
         <ScrollReveal className="text-center mb-12">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-[rgba(74,124,89,0.1)] text-nutri-primary text-sm font-medium uppercase tracking-wider mb-4">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-[rgba(248,201,216,0.2)] text-nutri-primary text-sm font-medium uppercase tracking-wider mb-4">
             Servicios
           </span>
           <h2 className="font-display font-semibold text-3xl md:text-[42px] text-[#2D3436] mb-4">
-            Una solución completa para tu bienestar
-          </h2>
-          <p className="text-[#636E72] max-w-[600px] mx-auto">
-            Ofrezco un acompañamiento integral en tu proceso de mejora de hábitos alimentarios.
-          </p>
+              Acompañamiento integral para tu bienestar
+            </h2>
+            <p className="text-[#636E72] max-w-[600px] mx-auto">
+              Como celíaca, sé lo que implica vivir sin gluten. Te ofrezco un enfoque que combina ciencia, empatía y experiencia propia.
+            </p>
         </ScrollReveal>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, i) => (
             <ScrollReveal key={service.title} delay={i * 150}>
-              <div className="bg-white border border-[rgba(74,124,89,0.08)] rounded-2xl p-8 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 group">
+              <div className="bg-white border border-[rgba(248,201,216,0.15)] rounded-2xl p-8 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 group">
                 <service.icon className="w-12 h-12 text-nutri-primary mb-4" strokeWidth={1.5} />
                 <img
                   src={img(service.image)}
@@ -160,39 +162,39 @@ function AboutSection() {
               <img
                 src={img("/images/about-portrait.jpg")}
                 alt="Dra. María González"
-                className="w-full max-w-[500px] rounded-[20px] shadow-[0_16px_48px_rgba(74,124,89,0.12)]"
+                className="w-full max-w-[500px] rounded-[20px] shadow-[0_16px_48px_rgba(248,201,216,0.2)]"
               />
             </div>
           </ScrollReveal>
 
           <div>
             <ScrollReveal>
-              <span className="inline-block px-4 py-1.5 rounded-full bg-[rgba(74,124,89,0.1)] text-nutri-primary text-sm font-medium uppercase tracking-wider mb-4">
+              <span className="inline-block px-4 py-1.5 rounded-full bg-[rgba(248,201,216,0.2)] text-nutri-primary text-sm font-medium uppercase tracking-wider mb-4">
                 Sobre Mí
               </span>
             </ScrollReveal>
             <ScrollReveal delay={100}>
               <h2 className="font-display font-semibold text-3xl md:text-[42px] text-[#2D3436] mb-5">
-                Hola, soy Dra. María González
+                Hola, soy Tatiana Castel
               </h2>
             </ScrollReveal>
             <ScrollReveal delay={200}>
               <div className="space-y-4 text-[#636E72] leading-relaxed">
                 <p>
-                  Soy nutricionista dedicada con más de 8 años de experiencia ayudando a personas a transformar su relación con la comida y alcanzar sus objetivos de salud.
+                  Soy Licenciada en Nutrición por la Universidad de Buenos Aires (UBA) y, como vos, vivo con celiaquía. Entiendo lo que implica dejar el gluten: no solo en la alimentación, sino también en lo emocional y lo social.
                 </p>
                 <p>
-                  Mi enfoque se basa en la evidencia científica combinada con un trato humano y empático. Creo firmemente que la alimentación saludable no se trata de restricciones, sino de encontrar un equilibrio sostenible.
+                  Mi enfoque combina el conocimiento científico con mi propia experiencia. Por eso sé que cada persona necesita un plan que se adapte a su historia, sus gustos y su ritmo de vida. No creo en las dietas mágicas ni en las restricciones extremas.
                 </p>
                 <p>
-                  Me especializo en nutrición clínica, control de peso saludable y manejo de condiciones metabólicas. Cada persona es única, y por eso cada plan que diseño es completamente personalizado.
+                  Me especializo en alimentación <strong>libre de gluten</strong> y <strong>antiinflamatoria</strong>, ayudando a personas con celiaquía, sensibilidad al gluten y otras condiciones a sentirse bien sin renunciar al placer de comer. Porque comer rico y saludable no tiene por qué estar reñido.
                 </p>
               </div>
             </ScrollReveal>
             <ScrollReveal delay={300}>
               <div className="flex flex-wrap gap-3 mt-7">
-                {['Lic. en Nutrición', 'Diplomado en Nutrición Clínica', 'Miembro de la Asociación de Nutricionistas'].map((badge) => (
-                  <span key={badge} className="px-3 py-1.5 rounded-full bg-[rgba(212,163,115,0.15)] text-nutri-secondary text-xs font-medium">
+                {['Lic. en Nutrición (UBA)', 'Especialista en Alimentación Sin Gluten', 'Celiaca — como vos'].map((badge) => (
+                  <span key={badge} className="px-3 py-1.5 rounded-full bg-[rgba(248,201,216,0.2)] text-nutri-secondary text-xs font-medium">
                     {badge}
                   </span>
                 ))}
@@ -204,7 +206,7 @@ function AboutSection() {
                 className="inline-flex items-center gap-2 px-7 py-3 mt-8 text-sm font-semibold text-white gradient-primary-btn rounded-xl shadow-btn hover:shadow-btn-hover hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
               >
                 <Calendar className="w-4 h-4" />
-                Reserva una Consulta
+                Agenda tu Consulta
               </Link>
             </ScrollReveal>
           </div>
@@ -227,7 +229,7 @@ function ProcessSection() {
     <section className="py-20 bg-white">
       <div className="max-w-[1280px] mx-auto px-6">
         <ScrollReveal className="text-center mb-16">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-[rgba(74,124,89,0.1)] text-nutri-primary text-sm font-medium uppercase tracking-wider mb-4">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-[rgba(248,201,216,0.2)] text-nutri-primary text-sm font-medium uppercase tracking-wider mb-4">
             Proceso
           </span>
           <h2 className="font-display font-semibold text-3xl md:text-[42px] text-[#2D3436] mb-4">
@@ -282,7 +284,7 @@ function TestimonialsSection() {
     <section className="py-20" style={{ background: 'linear-gradient(180deg, #FFF8EE 0%, #F7F5F0 100%)' }}>
       <div className="max-w-[1280px] mx-auto px-6">
         <ScrollReveal className="text-center mb-12">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-[rgba(74,124,89,0.1)] text-nutri-primary text-sm font-medium uppercase tracking-wider mb-4">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-[rgba(248,201,216,0.2)] text-nutri-primary text-sm font-medium uppercase tracking-wider mb-4">
             Testimonios
           </span>
           <h2 className="font-display font-semibold text-3xl md:text-[42px] text-[#2D3436]">
@@ -301,7 +303,7 @@ function TestimonialsSection() {
                   <div className="bg-white rounded-2xl p-8 shadow-card max-w-2xl mx-auto">
                     <div className="text-nutri-accent-leaf text-4xl mb-4">"</div>
                     <p className="text-[#2D3436] text-lg leading-relaxed mb-6">{t.text}</p>
-                    <div className="flex items-center gap-4 pt-4 border-t border-[rgba(74,124,89,0.1)]">
+                    <div className="flex items-center gap-4 pt-4 border-t border-[rgba(248,201,216,0.2)]">
                       <img src={img(t.image)} alt={t.name} className="w-12 h-12 rounded-full object-cover" />
                       <div>
                         <div className="font-semibold text-[#2D3436]">{t.name}</div>
@@ -339,7 +341,7 @@ function TestimonialsSection() {
                 key={i}
                 onClick={() => goTo(i)}
                 className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                  i === current ? 'bg-nutri-primary w-8' : 'bg-[rgba(74,124,89,0.25)]'
+                  i === current ? 'bg-nutri-primary w-8' : 'bg-[rgba(248,201,216,0.4)]'
                 }`}
               />
             ))}
@@ -358,7 +360,7 @@ function BlogPreviewSection() {
     <section className="py-20 bg-white">
       <div className="max-w-[1280px] mx-auto px-6">
         <ScrollReveal className="text-center mb-12">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-[rgba(74,124,89,0.1)] text-nutri-primary text-sm font-medium uppercase tracking-wider mb-4">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-[rgba(248,201,216,0.2)] text-nutri-primary text-sm font-medium uppercase tracking-wider mb-4">
             Blog
           </span>
           <h2 className="font-display font-semibold text-3xl md:text-[42px] text-[#2D3436] mb-4">
@@ -380,7 +382,7 @@ function BlogPreviewSection() {
                     />
                   </div>
                   <div className="p-6">
-                    <span className="inline-block px-3 py-1 rounded-full bg-[rgba(212,163,115,0.15)] text-nutri-secondary text-xs font-medium mb-3">
+                    <span className="inline-block px-3 py-1 rounded-full bg-[rgba(185,243,229,0.3)] text-nutri-secondary text-xs font-medium mb-3">
                       {post.category}
                     </span>
                     <h4 className="font-semibold text-lg text-[#2D3436] mb-2 group-hover:text-nutri-primary transition-colors">
@@ -422,26 +424,26 @@ function CTASection() {
         <ScrollReveal direction="scale">
           <div className="gradient-cta rounded-3xl p-10 md:p-16 text-center">
             <h2 className="font-display font-semibold text-2xl md:text-4xl text-white mb-4">
-              ¿Listo para comenzar tu transformación?
+              ¿Listo para empezar?
             </h2>
             <p className="text-[rgba(255,255,255,0.85)] text-lg max-w-[500px] mx-auto mb-8">
-              Agenda tu primera consulta y da el primer paso hacia una vida más saludable.
+              Agendá tu primera consulta y empecemos este camino juntos.
             </p>
             <Link
               to="/login"
               className="inline-flex items-center gap-2 px-8 py-4 text-base font-semibold text-nutri-primary bg-white rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.15)] hover:bg-nutri-cream transition-colors duration-200"
             >
               <Calendar className="w-5 h-5" />
-              Reservar Consulta Ahora
+              Quiero mi Consulta
             </Link>
             <div className="flex flex-wrap justify-center gap-8 mt-8">
               <div className="flex items-center gap-2 text-[rgba(255,255,255,0.8)] text-sm">
                 <Mail className="w-4 h-4" />
-                info@nutrivida.com
+                tatiana@nutriciontati.com
               </div>
               <div className="flex items-center gap-2 text-[rgba(255,255,255,0.8)] text-sm">
                 <Phone className="w-4 h-4" />
-                +1 234 567 890
+                +54 11 2345 6789
               </div>
             </div>
           </div>

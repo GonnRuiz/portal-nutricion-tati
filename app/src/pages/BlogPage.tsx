@@ -59,7 +59,7 @@ export function BlogPage() {
                 placeholder="Buscar artículos..."
                 value={searchQuery}
                 onChange={(e) => { setSearchQuery(e.target.value); setCurrentPage(1); }}
-                className="w-full pl-12 pr-4 py-3 bg-white border border-[#D5DBDB] rounded-xl text-[15px] focus:outline-none focus:border-nutri-primary focus:ring-2 focus:ring-[rgba(74,124,89,0.1)] transition-all"
+                className="w-full pl-12 pr-4 py-3 bg-white border border-[#D5DBDB] rounded-xl text-[15px] focus:outline-none focus:border-nutri-primary focus:ring-2 focus:ring-[rgba(248,201,216,0.2)] transition-all"
               />
             </div>
 
@@ -72,7 +72,7 @@ export function BlogPage() {
                   className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
                     activeCategory === cat
                       ? 'bg-nutri-primary text-white'
-                      : 'bg-white text-[#636E72] border border-[rgba(74,124,89,0.15)] hover:border-nutri-primary hover:text-nutri-primary'
+                      : 'bg-white text-[#636E72] border border-[rgba(248,201,216,0.25)] hover:border-nutri-primary hover:text-nutri-primary'
                   }`}
                 >
                   {cat}
@@ -97,7 +97,7 @@ export function BlogPage() {
                   </div>
                   <div className="p-6">
                     <div className="flex items-center gap-3 mb-3">
-                      <span className="px-3 py-1 rounded-full bg-[rgba(212,163,115,0.15)] text-nutri-secondary text-xs font-medium">
+                      <span className="px-3 py-1 rounded-full bg-[rgba(185,243,229,0.3)] text-nutri-secondary text-xs font-medium">
                         {post.category}
                       </span>
                       <span className="text-[#B2BEC3] text-xs">{post.readTime} de lectura</span>
@@ -135,7 +135,7 @@ export function BlogPage() {
                 className={`w-10 h-10 rounded-lg text-sm font-medium transition-all duration-200 ${
                   currentPage === page
                     ? 'bg-nutri-primary text-white'
-                    : 'bg-white text-[#636E72] border border-[rgba(74,124,89,0.15)] hover:border-nutri-primary hover:text-nutri-primary'
+                    : 'bg-white text-[#636E72] border border-[rgba(248,201,216,0.25)] hover:border-nutri-primary hover:text-nutri-primary'
                 }`}
               >
                 {page}
