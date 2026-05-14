@@ -89,8 +89,6 @@ function ServicesSection() {
     {
       icon: Video,
       image: '/images/service-consultation.jpg',
-      icon: Video,
-      image: '/images/service-consultation.jpg',
       title: 'Consultas Online',
       description: 'Sesiones virtuales donde evaluamos tu historia, tus hábitos y tus objetivos. Te escucho y diseñamos juntos el camino.',
       link: 'Agendar consulta',
