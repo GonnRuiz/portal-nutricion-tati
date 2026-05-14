@@ -23,7 +23,7 @@ export function LoginPage() {
       const success = await login(email, password);
       if (success) {
         toast({ title: '¡Bienvenido!', description: 'Has iniciado sesión correctamente.' });
-        navigate('/dashboard');
+        navigate(email === 'admin@nutrivida.com' ? '/admin' : '/dashboard');
       } else {
         toast({
           title: 'Error de inicio de sesión',

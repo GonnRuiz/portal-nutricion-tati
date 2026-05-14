@@ -1,15 +1,8 @@
 import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Leaf, LayoutDashboard, User, ClipboardList, Calendar, LogOut, Menu } from 'lucide-react';
+import { Leaf, LayoutDashboard, User, ClipboardList, Calendar, LogOut, Menu, Shield } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthContext';
 import { img } from '@/lib/utils'
-
-const navLinks = [
-  { label: 'Dashboard', path: '/dashboard', icon: LayoutDashboard },
-  { label: 'Mis Datos', path: '/dashboard/datos', icon: User },
-  { label: 'Plan Nutricional', path: '/dashboard/plan', icon: ClipboardList },
-  { label: 'Reservas', path: '/dashboard/reservas', icon: Calendar },
-];
 
 export function DashboardLayout({ children }: { children: React.ReactNode }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -68,7 +61,13 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
 
         {/* Nav */}
         <nav className="flex-1 p-4 space-y-1">
-          {navLinks.map((link) => (
+          {[
+            { label: 'Dashboard', path: '/dashboard', icon: LayoutDashboard },
+            { label: 'Mis Datos', path: '/dashboard/datos', icon: User },
+            { label: 'Plan Nutricional', path: '/dashboard/plan', icon: ClipboardList },
+            { label: 'Reservas', path: '/dashboard/reservas', icon: Calendar },
+            ...(user?.role === 'admin' ? [{ label: 'Panel Admin', path: '/admin', icon: Shield }] : []),
+          ].map((link) => (
             <Link
               key={link.path}
               to={link.path}
