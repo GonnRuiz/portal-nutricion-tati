@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Plus, Edit, Trash2, Eye, Search, X, Save, FileText, Users, CalendarDays, Clock, CheckCircle, XCircle, User, Activity, Weight, Ruler, Heart, ClipboardList, FileText as FileDoc } from 'lucide-react';
+import { Plus, Edit, Trash2, Eye, Search, X, Save, FileText, Users, CalendarDays, CheckCircle, XCircle, User, Activity, Weight, Ruler, Heart, ClipboardList, FileText as FileDoc } from 'lucide-react';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import { blogPosts } from '@/data/mockData';
 import { useToast } from '@/hooks/use-toast';
 import { img } from '@/lib/utils'
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from 'recharts';
-import type { AdminTab, ArticleForm, Patient } from '@/types/admin';
+import type { AdminTab, ArticleForm, Patient, AppointmentStatus } from '@/types/admin';
 import { CATEGORIES, mockPatients, mockWeightHistory, mockStudies, mockPlans, mockAppointments } from '@/data/admin/mockData';
 import { calcIMC, imcCategory, generateSlug } from '@/lib/adminHelpers';
 
@@ -34,9 +34,9 @@ export function AdminPage() {
   });
   const [appointments, setAppointments] = useState([...mockAppointments]);
   const [showAppointmentForm, setShowAppointmentForm] = useState(false);
-  const [editingAppointment, setEditingAppointment] = useState<any>(null);
+  const [editingAppointment, setEditingAppointment] = useState<typeof mockAppointments[0] | null>(null);
   const [appointmentForm, setAppointmentForm] = useState({
-    patient: '', date: '', time: '', type: 'Seguimiento', status: 'pendiente' as const,
+    patient: '', date: '', time: '', type: 'Seguimiento', status: 'pendiente' as AppointmentStatus,
   });
 
   const addPatient = () => {
@@ -71,7 +71,7 @@ export function AdminPage() {
     toast({ title: 'Paciente eliminado', description: 'El paciente fue eliminado del sistema.' });
   };
 
-  const openEditAppointment = (appt: typeof mockAppointments[0]) => {
+  const openEditAppointment = (appt: typeof appointments[0]) => {
     setEditingAppointment(appt);
     setAppointmentForm({
       patient: appt.patient, date: appt.date, time: appt.time,
