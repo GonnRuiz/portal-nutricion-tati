@@ -58,13 +58,13 @@
     background: linear-gradient(145deg, #FFFFFF 0%, #f0fdfa 100%);
   }
   .gradient-primary-btn {
-    background: linear-gradient(135deg, #f8c9d8 0%, #fadce6 100%);
+    background: linear-gradient(135deg, #d48a9f 0%, #c07a8e 100%);
   }
   .gradient-section-divider {
-    background: linear-gradient(90deg, transparent 0%, #f8c9d8 50%, transparent 100%);
+    background: linear-gradient(90deg, transparent 0%, #d48a9f 50%, transparent 100%);
   }
   .gradient-cta {
-    background: linear-gradient(135deg, #f8c9d8 0%, #e4a8bb 100%);
+    background: linear-gradient(135deg, #c07a8e 0%, #a86579 100%);
   }
 }
 
