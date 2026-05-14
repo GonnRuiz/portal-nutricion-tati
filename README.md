@@ -13,7 +13,7 @@ Portal de paciente para consultas nutricionales con la Lic. Tatiana Castel. Espe
 ## Estructura
 
 ```
-portal-nutricion-tati/
+tati-nutricion-singluten/
 ├── app/                    # Frontend (Vite + React)
 │   ├── src/
 │   │   ├── components/     # Componentes UI y layout
