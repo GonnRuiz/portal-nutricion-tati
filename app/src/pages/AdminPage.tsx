@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Plus, Edit, Trash2, Eye, Search, X, Save, FileText, Users, CalendarDays, Mail, Phone, Clock, CheckCircle, XCircle, User, Activity, Weight, Ruler, Heart, TrendingDown, ClipboardList, FileText as FileDoc } from 'lucide-react';
+import { Plus, Edit, Trash2, Eye, Search, X, Save, FileText, Users, CalendarDays, Clock, CheckCircle, XCircle, User, Activity, Weight, Ruler, Heart, ClipboardList, FileText as FileDoc } from 'lucide-react';
 import { ScrollReveal } from '@/components/ScrollReveal';
 import { blogPosts } from '@/data/mockData';
 import { useToast } from '@/hooks/use-toast';
@@ -126,7 +126,6 @@ export function AdminPage() {
     a.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  const calcIMC = (weight: number, height: number) => (weight / ((height / 100) ** 2)).toFixed(1);
   const imcCategory = (imc: number) => {
     if (imc < 18.5) return { label: 'Bajo peso', color: 'text-amber-600', bg: 'bg-[rgba(243,156,18,0.1)]' };
     if (imc < 25) return { label: 'Normal', color: 'text-green-600', bg: 'bg-[rgba(39,174,96,0.1)]' };
