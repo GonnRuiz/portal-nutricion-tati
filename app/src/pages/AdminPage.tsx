@@ -32,6 +32,12 @@ export function AdminPage() {
     name: '', email: '', phone: '', age: 30, height: 165, weight: 70,
     condition: '', plan: 'Sin Gluten',
   });
+  const [appointments, setAppointments] = useState([...mockAppointments]);
+  const [showAppointmentForm, setShowAppointmentForm] = useState(false);
+  const [editingAppointment, setEditingAppointment] = useState<any>(null);
+  const [appointmentForm, setAppointmentForm] = useState({
+    patient: '', date: '', time: '', type: 'Seguimiento', status: 'pendiente' as const,
+  });
 
   const addPatient = () => {
     const imc = calcIMC(patientForm.weight, patientForm.height);
@@ -63,6 +69,40 @@ export function AdminPage() {
   const deletePatient = (id: string) => {
     setPatients(patients.filter(p => p.id !== id));
     toast({ title: 'Paciente eliminado', description: 'El paciente fue eliminado del sistema.' });
+  };
+
+  const openEditAppointment = (appt: typeof mockAppointments[0]) => {
+    setEditingAppointment(appt);
+    setAppointmentForm({
+      patient: appt.patient, date: appt.date, time: appt.time,
+      type: appt.type, status: appt.status,
+    });
+    setShowAppointmentForm(true);
+  };
+
+  const saveAppointment = () => {
+    if (!appointmentForm.date || !appointmentForm.time) {
+      toast({ title: 'Completá fecha y hora', variant: 'destructive' });
+      return;
+    }
+    setAppointments(appointments.map(a =>
+      a.id === editingAppointment.id
+        ? { ...a, ...appointmentForm, status: appointmentForm.status }
+        : a
+    ));
+    setShowAppointmentForm(false);
+    toast({ title: 'Turno actualizado', description: `${appointmentForm.patient} — ${appointmentForm.date} a las ${appointmentForm.time}` });
+  };
+
+  const rescheduleAppointment = (id: string, days: number) => {
+    setAppointments(appointments.map(a => {
+      if (a.id !== id) return a;
+      const parts = a.date.split('/');
+      const d = new Date(+parts[2], +parts[1] - 1, +parts[0] + days);
+      const newDate = d.toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric' });
+      return { ...a, date: newDate, status: a.status === 'cancelada' ? 'cancelada' : 'pendiente' as const };
+    }));
+    toast({ title: `Turno ${days > 0 ? 'pospuesto' : 'adelantado'} ${Math.abs(days)} días` });
   };
 
   const filteredArticles = articles.filter((a) =>
@@ -364,7 +404,7 @@ export function AdminPage() {
         {activeTab === 'turnos' && (
         <div className="bg-white rounded-2xl shadow-card">
           <div className="p-6 border-b border-[rgba(248,201,216,0.15)]">
-            <h2 className="font-semibold text-lg text-[#2D3436]">Gestión de Turnos</h2>
+            <h2 className="font-semibold text-lg text-[#2D3436]">Gestión de Turnos ({appointments.length})</h2>
           </div>
           <div className="overflow-x-auto">
             <table className="w-full">
@@ -375,11 +415,11 @@ export function AdminPage() {
                   <th className="text-left px-6 py-4 text-sm font-medium text-[#636E72]">Hora</th>
                   <th className="text-left px-6 py-4 text-sm font-medium text-[#636E72]">Tipo</th>
                   <th className="text-left px-6 py-4 text-sm font-medium text-[#636E72]">Estado</th>
-                  <th className="text-left px-6 py-4 text-sm font-medium text-[#636E72]">Acción</th>
+                  <th className="text-left px-6 py-4 text-sm font-medium text-[#636E72]">Acciones</th>
                 </tr>
               </thead>
               <tbody>
-                {mockAppointments.map((a) => (
+                {appointments.map((a) => (
                   <tr key={a.id} className="border-b border-[rgba(248,201,216,0.1)] hover:bg-[rgba(248,201,216,0.05)] transition-colors">
                     <td className="px-6 py-4 font-medium text-sm text-[#2D3436]">{a.patient}</td>
                     <td className="px-6 py-4 text-sm text-[#636E72]">{a.date}</td>
@@ -395,19 +435,34 @@ export function AdminPage() {
                       </span>
                     </td>
                     <td className="px-6 py-4">
-                      <div className="flex items-center gap-2">
-                        {a.status === 'pendiente' && (
+                      <div className="flex items-center gap-1">
+                        <button onClick={() => openEditAppointment(a)}
+                          className="p-2 rounded-lg text-[#636E72] hover:bg-[rgba(248,201,216,0.2)] hover:text-nutri-primary transition-all" title="Editar turno">
+                          <Edit className="w-4 h-4" />
+                        </button>
+                        {a.status !== 'cancelada' && (
                           <>
-                            <button className="p-2 rounded-lg text-green-600 hover:bg-[rgba(39,174,96,0.1)] transition-all" title="Confirmar">
-                              <CheckCircle className="w-4 h-4" />
+                            <button onClick={() => rescheduleAppointment(a.id, 1)}
+                              className="p-2 rounded-lg text-amber-600 hover:bg-[rgba(243,156,18,0.1)] transition-all" title="Posponer 1 día">
+                              +1
                             </button>
-                            <button className="p-2 rounded-lg text-red-500 hover:bg-[rgba(239,68,68,0.1)] transition-all" title="Cancelar">
-                              <XCircle className="w-4 h-4" />
+                            <button onClick={() => rescheduleAppointment(a.id, 7)}
+                              className="p-2 rounded-lg text-amber-600 hover:bg-[rgba(243,156,18,0.1)] transition-all" title="Posponer 1 semana">
+                              +7
                             </button>
                           </>
                         )}
-                        {a.status === 'confirmada' && (
-                          <span className="text-xs text-[#B2BEC3] flex items-center gap-1"><Clock className="w-3 h-3" />En agenda</span>
+                        {a.status === 'pendiente' && (
+                          <button onClick={() => setAppointments(appointments.map(x => x.id === a.id ? { ...x, status: 'confirmada' as const } : x))}
+                            className="p-2 rounded-lg text-green-600 hover:bg-[rgba(39,174,96,0.1)] transition-all" title="Confirmar">
+                            <CheckCircle className="w-4 h-4" />
+                          </button>
+                        )}
+                        {a.status !== 'cancelada' && (
+                          <button onClick={() => setAppointments(appointments.map(x => x.id === a.id ? { ...x, status: 'cancelada' as const } : x))}
+                            className="p-2 rounded-lg text-red-500 hover:bg-[rgba(239,68,68,0.1)] transition-all" title="Cancelar">
+                            <XCircle className="w-4 h-4" />
+                          </button>
                         )}
                       </div>
                     </td>
@@ -673,6 +728,63 @@ export function AdminPage() {
                 <button onClick={addPatient} disabled={!patientForm.name}
                   className="flex items-center gap-2 px-6 py-2.5 text-sm font-semibold text-white gradient-primary-btn rounded-xl hover:scale-[1.02] transition-all disabled:opacity-50">
                   <Plus className="w-4 h-4" />Agregar Paciente
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Edit Appointment Modal */}
+      {showAppointmentForm && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm">
+          <div className="bg-white rounded-2xl w-full max-w-md shadow-modal">
+            <div className="p-6 border-b border-[rgba(248,201,216,0.15)] flex items-center justify-between">
+              <h3 className="font-semibold text-lg text-[#2D3436]">
+                {editingAppointment?.status === 'cancelada' ? 'Reagendar Turno' : 'Editar Turno'}
+              </h3>
+              <button onClick={() => setShowAppointmentForm(false)} className="p-2 rounded-lg hover:bg-[#F7F5F0] transition-colors">
+                <X className="w-5 h-5 text-[#636E72]" />
+              </button>
+            </div>
+            <div className="p-6 space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-[#2D3436] mb-1.5">Paciente</label>
+                <input type="text" value={appointmentForm.patient} disabled className="w-full px-4 py-3 bg-[#F7F5F0] border border-[#D5DBDB] rounded-xl text-[15px] text-[#636E72]" />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-[#2D3436] mb-1.5">Fecha</label>
+                <input type="text" value={appointmentForm.date}
+                  onChange={(e) => setAppointmentForm({ ...appointmentForm, date: e.target.value })}
+                  placeholder="DD/MM/AAAA"
+                  className="w-full px-4 py-3 border border-[#D5DBDB] rounded-xl text-[15px] focus:outline-none focus:border-nutri-primary focus:ring-2 focus:ring-[rgba(248,201,216,0.2)] transition-all" />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-[#2D3436] mb-1.5">Horario</label>
+                <select value={appointmentForm.time} onChange={(e) => setAppointmentForm({ ...appointmentForm, time: e.target.value })}
+                  className="w-full px-4 py-3 border border-[#D5DBDB] rounded-xl text-[15px] focus:outline-none focus:border-nutri-primary focus:ring-2 focus:ring-[rgba(248,201,216,0.2)] transition-all">
+                  {['9:00','9:30','10:00','10:30','11:00','11:30','14:00','14:30','15:00','15:30','16:00','16:30'].map(t => (
+                    <option key={t} value={t}>{t}</option>
+                  ))}
+                </select>
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-[#2D3436] mb-1.5">Tipo de consulta</label>
+                <select value={appointmentForm.type} onChange={(e) => setAppointmentForm({ ...appointmentForm, type: e.target.value })}
+                  className="w-full px-4 py-3 border border-[#D5DBDB] rounded-xl text-[15px] focus:outline-none focus:border-nutri-primary focus:ring-2 focus:ring-[rgba(248,201,216,0.2)] transition-all">
+                  <option>Primera consulta</option>
+                  <option>Seguimiento</option>
+                  <option>Express</option>
+                </select>
+              </div>
+              <div className="flex items-center justify-end gap-3 pt-2">
+                <button onClick={() => setShowAppointmentForm(false)}
+                  className="px-5 py-2.5 text-sm font-medium text-[#636E72] border border-[#D5DBDB] rounded-xl hover:bg-[#F7F5F0] transition-all">
+                  Cancelar
+                </button>
+                <button onClick={saveAppointment}
+                  className="flex items-center gap-2 px-6 py-2.5 text-sm font-semibold text-white gradient-primary-btn rounded-xl hover:scale-[1.02] transition-all">
+                  <Save className="w-4 h-4" />Guardar cambios
                 </button>
               </div>
             </div>
